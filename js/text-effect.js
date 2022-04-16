@@ -1,3 +1,29 @@
+/* SECOND ITERATION */
+
+consoleText(['Jacob Johns','More stuff here'],['name','desc']);
+
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function consoleText(words, id) {
+  for (let i = 0; i < words.length; i++) {
+    let idElement = document.getElementById(id[i]);
+
+    for (let j = 0; j <= words[i].length; j++) {
+      idElement.textContent += words[i].charAt(j);
+      await sleep(150);
+    }
+  }
+}
+
+
+
+/* FIRST ITERATION
+
+
 //consoleText(['Jacob Johns','Description'],['name','desc']);
 
 setInterval(consoleText('Jacob Johns','name'), 120);
@@ -46,7 +72,7 @@ function consoleText(words, id) {
     } else if (third != true) {
       
     }
-  }, 120)*/
+  }, 120)
 
   window.setInterval(function() {
     if (visible === true) {
@@ -58,3 +84,5 @@ function consoleText(words, id) {
     }
   }, 400)
 }
+
+*/
