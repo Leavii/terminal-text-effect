@@ -9,19 +9,24 @@ function sleep(ms) {
 
 
 async function consoleText(words, id) {
+
   for (let i = 0; i < words.length; i++) {
     let idElement = document.getElementById(id[i]);
+    idElement.classList.add('cursor');
 
     for (let j = 0; j <= words[i].length; j++) {
       idElement.textContent += words[i].charAt(j);
       await sleep(150);
+    }
+    if (i + 1 != words.length) {
+      idElement.classList.remove('cursor');
     }
   }
 }
 
 
 
-/* FIRST ITERATION
+/* FIRST ITERATION and attempts
 
 
 //consoleText(['Jacob Johns','Description'],['name','desc']);
